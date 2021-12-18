@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"strings"
 )
@@ -17,14 +16,12 @@ type PlayerServer struct {
 }
 
 func (p *PlayerServer) ServerHTTP(w http.ResponseWriter, r *http.Request) {
-	log.Fatalf("ServerHTTP")
 	player := strings.TrimPrefix(r.URL.Path, "/players/")
 
 	fmt.Fprint(w, p.store.GetPlayerScore(player))
 }
 
 func (p *PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	log.Fatalf("ServeHTTP")
 	player := strings.TrimPrefix(r.URL.Path, "/players/")
 
 	switch r.Method {

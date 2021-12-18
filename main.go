@@ -7,6 +7,10 @@ import (
 
 type inMemoryPlayerStore struct{}
 
+func (i *inMemoryPlayerStore) RecordWin(name string) {
+
+}
+
 func (i *inMemoryPlayerStore) GetPlayerScore(name string) int {
 	return 123
 }

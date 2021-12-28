@@ -8,6 +8,10 @@ type inMemoryPlayerStore struct {
 	store map[string]int
 }
 
+func (i *inMemoryPlayerStore) GetLeague() []Player {
+	return nil
+}
+
 func (i *inMemoryPlayerStore) RecordWin(name string) {
 	i.store[name]++
 }
